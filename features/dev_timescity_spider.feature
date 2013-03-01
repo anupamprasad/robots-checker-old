@@ -90,6 +90,19 @@ Given I read robots.txt at "www.timescity.com" as "googlebot"
 When I lookup for "http://timescity.com/ApplicationServlet?KW=fame&ST=or&MCaI=4&CiI=2&MTC=Theatre&AP=SpSr&CoI=3&CiN=Mumbai&OBN=Y&BCaI=3&CaN=Movies&CaI=5&BCaN=Movie"
 Then It should not be allowed for crawling
 
+Scenario: Application Servlet with Timescity at Live server is blocked for spiders
+
+Given I read robots.txt at "www.timescity.com" as "googlebot"
+When I lookup for "http://timescity.com/timescity/ApplicationServlet?KW=fame&ST=or&MCaI=4&CiI=2&MTC=Theatre&AP=SpSr&CoI=3&CiN=Mumbai&OBN=Y&BCaI=3&CaN=Movies&CaI=5&BCaN=Movie"
+Then It should not be allowed for crawling
+
+Scenario: Est SRP with Timescity at Live server is blocked for spiders
+
+Given I read robots.txt at "www.timescity.com" as "googlebot"
+When I lookup for "http://timescity.com/estsrp.php?bytags=info@jyotinivas.org"
+Then It should not be allowed for crawling
+
+
 Scenario: Application Servlet at Dev server is blocked for spiders
 
 Given I read robots.txt at "dev.timescity.com" as "googlebot"
@@ -100,5 +113,11 @@ Scenario: estsrp.php with tag is blocked for spiders
 
 Given I read robots.txt at "www.timescity.com" as "googlebot"
 When I lookup for "http://timescity.com/estsrp.php?bytags=info@jyotinivas.org"
+Then It should not be allowed for crawling
+
+Scenario: API is blocked for spiders
+
+Given I read robots.txt at "www.timescity.com" as "googlebot"
+When I lookup for "http://timescity.com/api/abc"
 Then It should not be allowed for crawling
 

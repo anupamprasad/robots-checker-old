@@ -42,18 +42,6 @@ Given I read robots.txt at "design.qc.timescity.com" as "googlebot"
 When I lookup for "http://design.qc.timescity.com/crons/abc"
 Then It should not be allowed for crawling
 
-Scenario: Blog is blocked for spiders at Design QC server
-
-Given I read robots.txt at "design.qc.timesity.com" as "googlebot"
-When I lookup for "http://design.qc.timescity.com/blog/abc"
-Then It should not be allowed for crawling
-
-Scenario: Diwali event is blocked for spiders at Design QC server
-
-Given I read robots.txt at "design.qc.timesity.com" as "googlebot"
-When I lookup for "http://design.qc.timescity.com/delhi/event/diwali"
-Then It should not be allowed for crawling
-
 Scenario: Robots.txt has 0 sitemaps
 
 Given I read robots.txt at "design.qc.timescity.com" as "googlebot"
@@ -96,27 +84,4 @@ Given I read robots.txt at "www.timescity.com" as "googlebot"
 When I lookup for "http://design.qc.timescity.com/ahmedabad/barsnclubs"
 Then It should not be allowed for crawling
 
-Scenario: Timespoynt is blocked for spiders
-
-Given I read robots.txt at "design.qc.timescity.com" as "googlebot"
-When I lookup for "http://design.qc.timescity.com/timespoynt"
-Then It should not be allowed for crawling
-
-Scenario: 404 page is blocked for spiders
-
-Given I read robots.txt at "design.qc.timescity.com" as "googlebot"
-When I lookup for "http://design.qc.timescity.com/404.php"
-Then It should not be allowed for crawling
-
-Scenario: Application Servlet at QC server is blocked for spiders
-
-Given I read robots.txt at "design.qc.timescity.com" as "googlebot"
-When I lookup for "http://design.qc.timescity.com/ApplicationServlet?KW=fame&ST=or&MCaI=4&CiI=2&MTC=Theatre&AP=SpSr&CoI=3&CiN=Mumbai&OBN=Y&BCaI=3&CaN=Movies&CaI=5&BCaN=Movie"
-Then It should not be allowed for crawling
-
-Scenario: estsrp.php with tag is blocked for spiders
-
-Given I read robots.txt at "design.qc.timescity.com" as "googlebot"
-When I lookup for "http://design.qc.timescity.com/estsrp.php?bytags=info@jyotinivas.org"
-Then It should not be allowed for crawling
 
