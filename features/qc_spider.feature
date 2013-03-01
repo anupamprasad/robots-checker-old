@@ -90,3 +90,4 @@ Given I read robots.txt at "www.timescity.com" as "googlebot"
 When I lookup for "http://qc.timescity.com/ahmedabad/barsnclubs"
 Then It should not be allowed for crawling
 
+
